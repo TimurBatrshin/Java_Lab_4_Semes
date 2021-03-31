@@ -6,7 +6,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.itis.javalab.dto.UserDto;
-import ru.itis.javalab.dto.UserForm;
 import ru.itis.javalab.models.User;
 import ru.itis.javalab.repositories.UsersRepository;
 import ru.itis.javalab.util.EmailUtil;
@@ -15,7 +14,6 @@ import ru.itis.javalab.util.MailsGenerator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.UUID;
 
 import static ru.itis.javalab.dto.UserDto.from;
 
