@@ -2,7 +2,6 @@ package ru.itis.javalab.services;
 
 import org.springframework.stereotype.Service;
 import ru.itis.javalab.models.Product;
-import ru.itis.javalab.models.User;
 import ru.itis.javalab.repositories.ProductRepositories;
 
 import java.util.List;
@@ -23,6 +22,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Optional<Product> getProductCart(Integer cart_id) {
+        return productRepositories.findProductCart(cart_id);
+    }
+
+    @Override
+    public void getCartUser(Long cartId, String name, String description, int price, String photo) {
+        productRepositories.setCartUser(cartId, name, description, price, photo);
+    }
+
+    @Override
     public List<Product> getAllProducts() {
         return productRepositories.getAllProduct();
     }
@@ -33,12 +42,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public void addToCart(Long cartId, Integer productId) {
+        productRepositories.addToCart(cartId, productId);
+    }
+
+    @Override
     public List<Product> getAllProductsFromCartUser() {
         return productRepositories.findAllProductsFromCartUser();
     }
 
+
+
     @Override
-    public Optional<Product> getProductById(Long id) {
+    public Optional<Product> getProductById(Integer id) {
         return productRepositories.getProductById(id);
     }
 
