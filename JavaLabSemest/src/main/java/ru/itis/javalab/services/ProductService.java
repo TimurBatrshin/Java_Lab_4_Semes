@@ -1,7 +1,6 @@
 package ru.itis.javalab.services;
 
 import ru.itis.javalab.models.Product;
-import ru.itis.javalab.models.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +9,12 @@ public interface ProductService {
     List<Product> getAllProducts();
     List<Product> getProductRating();
 
-    List<Product> getAllProductsFromCartUser();
+    void addToCart(Long cartId, Integer productId);
 
-    Optional<Product> getProductById(Long id);
+    List<Product> getAllProductsFromCartUser();
+    Optional<Product> getProductById(Integer id);
     List<Product> getProductByUser(Long product_id, Long user_id);
+    Optional<Product> getProductCart(Integer cart_id);
+
+    void getCartUser(Long cartId, String name, String description, int price, String photo);
 }
