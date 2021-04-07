@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu page</title>
+    <!--    <link rel="stylesheet" href="css/main.css">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            display: grid;
+            /*padding-top: 100px;*/
+            grid-template-rows: 100vh;
+            grid-template-areas: "present_block" "best_burgers" "cheap_burgers";
+        }
+
+        header {
+            display: grid !important;
+            position: fixed;
+            height: 100px;
+            background: #000;
+            width: 100%;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            color: #fff;
+            align-items: center;
+            justify-items: center;
+            z-index: 2;
+        }
+
+        header ul {
+            list-style: none;
+        }
+
+        header ul li {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            line-height: 100px;
+            padding: 0 5px;
+        }
+
+        header a {
+            color: #fff;
+            transition: all .5s;
+            font-family: "Paytone One", sans-serif;
+
+        }
+
+        header a:hover {
+            color: #F2C64D;
+        }
+
+        header ul li a {
+            display: block;
+        }
+
+        #present_block {
+            position: relative;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-area: present_block;
+            background-size: cover;
+            background: url("../img/banner/banner2.png") center center;
+        }
+
+        /*#present_block::before {*/
+        /*    position: absolute;*/
+        /*    content: "";*/
+        /*    background-color: #040E27;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    width: 100%;*/
+        /*    height: 100%;*/
+        /*    opacity: .4;*/
+        /*    z-index: 1;*/
+        /*}*/
+
+        #present_block p {
+            color: #fff;
+            font-size: 10em;
+            text-shadow: 5px 5px 10px #000;
+            font-family: "Paytone One", sans-serif
+        }
+
+        #best_burgers > h1 {
+            font-size: 3em;
+            margin-bottom: 90px;
+        }
+
+        #best_burgers > h2 {
+            margin-bottom: 10px;
+            color: #F2C64D;
+            font-size: 2em;
+            font-family: "Pacifico", cursive;
+        }
+
+        #best_burgers ul {
+            display: grid;
+            list-style: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            row-gap: 30px;
+            width: 80%;
+        }
+
+        #best_burgers ul li {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            height: 170px;
+            justify-items: center;
+        }
+
+        #best_burgers ul li img {
+            border-radius: 50%;
+            width: 166px;
+            height: 166px;
+        }
+
+        .about_best_burger p {
+            color: dimgray;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .price_and_basket h3 {
+            justify-self: left;
+            color: #F0542C;
+            font-size: 1.5em;
+        }
+
+        .price_and_basket button {
+            background: none;
+            outline: none;
+            border: none;
+            color: #F0542C;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color .3s;
+        }
+
+        .price_and_basket button:hover {
+            color: #ac3512;
+        }
+
+        #cheap_burgers ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #cheap_burgers ul li {
+            height: 435px;
+            overflow: hidden;
+            position: relative;
+            display: grid;
+            align-items: end;
+            color: #fff;
+        }
+
+        #cheap_burgers ul li:hover img {
+            transform: scale(1.1);
+        }
+
+        #cheap_burgers ul li img {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            transition: all .3s ease-in-out;
+        }
+
+        .about_cheap_burgers h3 {
+            font-size: 2em;
+            font-family: "Montserrat", sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .about_cheap_burgers p {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .about_cheap_burgers a {
+            background: #F2C64D;
+            color: #fff;
+            padding: 13px 30px;
+            justify-self: left;
+            margin-top: 20px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: all .5s;
+            border: 1px solid #F2C64D;
+        }
+
+        .about_cheap_burgers a:hover {
+            background: transparent;
+            border: 1px solid #F2C64D;
+            color: #F2C64D;
+        }
+
+        .tab .nav-tabs li {
+            margin: 0 30px 0 0;
+        }
+
+        .tab .nav-tabs li a {
+            font-size: 18px;
+            color: #fff;
+            border-radius: 0;
+            text-transform: uppercase;
+            background: transparent;
+            padding: 0;
+            margin-right: 0;
+            border: none;
+            border-bottom: 2px solid transparent;
+            opacity: 0.5;
+            position: relative;
+            transition: all 0.5s ease 0s;
+        }
+
+        .tab .nav-tabs li a:hover {
+            background: transparent;
+        }
+
+        .tab .nav-tabs li.active a,
+        .tab .nav-tabs li.active a:focus,
+        .tab .nav-tabs li.active a:hover {
+            border: none;
+            background: transparent;
+            opacity: 1;
+            border-bottom: 2px solid #eec111;
+            color: #fff;
+        }
+
+        .tab .tab-content {
+            padding: 20px 0 0 0;
+            margin-top: 40px;
+            background: transparent;
+            z-index: 1;
+            position: relative;
+        }
+
+        .form-horizontal .form-control {
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 20px;
+            box-shadow: none;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            transition: all 0.3s ease 0s;
+        }
+
+        .form-horizontal .form-control:focus {
+            box-shadow: none;
+            outline: 0 none;
+        }
+
+        .form-horizontal .form-group label {
+            padding: 0 20px;
+            color: #7f8291;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+
+        .form-horizontal .main-checkbox {
+            width: 20px;
+            height: 20px;
+            background: #eec111;
+            float: left;
+            margin: 5px 0 0 20px;
+            border: 1px solid #eec111;
+            position: relative;
+        }
+
+        .form-horizontal .main-checkbox label {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .form-horizontal .main-checkbox label:after {
+            content: "";
+            width: 10px;
+            height: 5px;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            border: 3px solid #fff;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .form-horizontal .main-checkbox input[type=checkbox] {
+            visibility: hidden;
+        }
+
+        .form-horizontal .main-checkbox input[type=checkbox]:checked + label:after {
+            opacity: 1;
+        }
+
+        .form-horizontal .text {
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 7px;
+            line-height: 20px;
+            padding-top: 5px;
+            text-transform: capitalize;
+        }
+
+        .form-horizontal .btn {
+            width: 100%;
+            background: #eec111;
+            padding: 10px 20px;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin: 20px 0 30px 0;
+        }
+
+        .form-horizontal .btn:focus {
+            background: #eec111;
+            color: #fff;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .form-horizontal .forgot-pass {
+            border-top: 1px solid #615f6c;
+            margin: 0;
+            text-align: center;
+        }
+
+        .form-horizontal .forgot-pass .btn {
+            width: auto;
+            background: transparent;
+            margin: 30px 0 0 0;
+            color: #615f6c;
+            text-transform: capitalize;
+            transition: all 0.3s ease 0s;
+        }
+
+        .form-horizontal .forgot-pass .btn:hover {
+            color: #eec111;
+        }
+
+        @media only screen and (max-width: 479px) {
+            .tab {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+    </ul>
+    <a href="#"><img src="../img/logo.png" alt=""></a>
+    <a href="#">Registration</a> <!-- or Profile -->
+    <a href="#"><img src="../images/back.png" width="20" alt=""></a>
+</header>
+<div id="present_block">
+    <p>Big Burgers</p>
+</div>
+<form action="/menu"></form>
+<div id="best_burgers">
+    <h2>Burger Menu</h2>
+    <h1>BEST EVER BURGERS</h1>
+    <ul>
+        <li><img src="../img/burger/1.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+
+        <li><img src="../img/burger/2.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/3.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/4.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/5.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/6.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/7.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+        <li><img src="../img/burger/8.png" alt="">
+            <div class="about_best_burger">
+                <h1>Beefy Burgers</h1>
+                <p>Great way to make your business appear trust
+                    and relevant.</p>
+                <div class="price_and_basket">
+                    <h3 class="price">$20</h3>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <li><img src="../img/burger/1.png" alt="">
+        <div class="about_best_burger">
+            <h1>Beefy Burgers</h1>
+            <p>Great way to make your business appear trust
+                and relevant.</p>
+            <div class="price_and_basket">
+                <h3 class="price">$20</h3>
+                <button>Добавить в корзину</button>
+            </div>
+        </div>
+    </li>
+</div>
+</form>
+</body>
+</html>
