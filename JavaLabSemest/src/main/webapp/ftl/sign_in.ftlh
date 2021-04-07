@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<#import "spring.ftl" as spring/>
 <head>
     <meta charset="UTF-8">
     <title>Menu page</title>
@@ -12,6 +13,122 @@
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
 
     <style>
+
+        #login {
+            background-color: #fff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+            background-image: -webkit-linear-gradient(top, #fff, #eee);
+            background-image: -moz-linear-gradient(top, #fff, #eee);
+            background-image: -ms-linear-gradient(top, #fff, #eee);
+            background-image: -o-linear-gradient(top, #fff, #eee);
+            background-image: linear-gradient(top, #fff, #eee);
+            height: 240px;
+            width: 400px;
+            margin: -150px 0 0 -230px;
+            padding: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),
+            0 1px 1px rgba(0, 0, 0, .2),
+            0 3px 0 #fff,
+            0 4px 0 rgba(0, 0, 0, .2),
+            0 6px 0 #fff,
+            0 7px 0 rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),
+            1px 1px 0 rgba(0, 0, 0, .1),
+            3px 3px 0 rgba(255, 255, 255, 1),
+            4px 4px 0 rgba(0, 0, 0, .1),
+            6px 6px 0 rgba(255, 255, 255, 1),
+            7px 7px 0 rgba(0, 0, 0, .1);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),
+            0 1px 1px rgba(0, 0, 0, .2),
+            0 3px 0 #fff,
+            0 4px 0 rgba(0, 0, 0, .2),
+            0 6px 0 #fff,
+            0 7px 0 rgba(0, 0, 0, .2);
+        }
+
+        #login:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            border: 1px dashed #ccc;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            -moz-box-shadow: 0 0 0 1px #fff;
+            -webkit-box-shadow: 0 0 0 1px #fff;
+            box-shadow: 0 0 0 1px #fff;
+        }
+
+        h1 {
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+            text-transform: uppercase;
+            text-align: center;
+            color: #666;
+            margin: 0 0 30px 0;
+            letter-spacing: 4px;
+            font: normal 26px/1 Verdana, Helvetica;
+            position: relative;
+        }
+
+        fieldset {
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        #inputs input {
+            background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+            padding: 15px 15px 15px 30px;
+            margin: 0 0 10px 0;
+            width: 353px; /* 353 + 2 + 45 = 400 */
+            border: 1px solid #ccc;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+            -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+            box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+        }
+
+        #submit {
+            background-color: #ffb94b;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+            background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+            background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+            background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+            background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+            background-image: linear-gradient(top, #fddb6f, #ffb94b);
+
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+
+            -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+            -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+
+            border-width: 1px;
+            border-style: solid;
+            border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+            float: left;
+            height: 35px;
+            padding: 0;
+            width: 120px;
+            cursor: pointer;
+            font: bold 15px Arial, Helvetica;
+            color: #8f5a0a;
+        }
         * {
             padding: 0;
             margin: 0;
@@ -21,11 +138,12 @@
             text-decoration: none;
         }
 
-        body {
+        html, body {
             display: grid;
             /*padding-top: 100px;*/
             grid-template-rows: 100vh;
             grid-template-areas: "present_block" "best_burgers" "cheap_burgers";
+            height: 90%;
         }
 
         header {
@@ -284,16 +402,19 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Email</label>
-                            <input placeholder="Email" name="email" type="email">
+<#--                            <label><@spring.message 'sign_up_page.registration.email'/></label>-->
+<#--                            <input placeholder="Email" name="email" type="email">-->
+                            <fieldset id="inputs">
+                                <label><@spring.message 'sign_up_page.registration.email'/></label>
+                                <input id="username" type="text" placeholder="Логин" name="email">
+                                <label><@spring.message 'sign_up_page.registration.password'/></label>
+                                <input id="password" type="password" placeholder="Пароль" name="password">
+                            </fieldset>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input placeholder="password" type="password" name="password">
-                        </div>
-                        <div class="form-group ">
-                            <input type="submit" value="Sign In">
-                        </div>
+                        <fieldset id="actions">
+                            <input type="submit" id="submit" value="<@spring.message 'sign_up_page.registration.sign_in'/>">
+                            <a href="/sign_up"><@spring.message 'sign_up_page.registration.title'/></a>
+                        </fieldset>
                     </div>
                 </div>
             </div>
