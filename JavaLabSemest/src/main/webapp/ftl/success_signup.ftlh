@@ -34,7 +34,7 @@
             height: 100px;
             background: #000;
             width: 100%;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
             color: #fff;
             align-items: center;
             justify-items: center;
@@ -268,7 +268,8 @@
     <a href="/main"><img
                 src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg"
                 width="180" height="95" alt=""></a>
-    <a href="/sign-up">Registration</a> <!-- or Profile -->
+    <a href="/sign_up">Registration</a>
+    <a href="/sign_in">Sign In</a>
     <a href="/cart"><img src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg" width="20" alt=""></a>
 </header>
 <div id="present_block">
@@ -276,6 +277,6 @@
 </div>
 
 
-<h1>Успешно</h1>
+<h1>Success</h1>
 </body>
 </html>
