@@ -21,6 +21,7 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     private static final String SQL_SELECT = "select * from users";
     private static final String SQL_SELECT_BY_ID = "select * from users where id = :id limit 1";
     private static final String SQL_SELECT_ALL_WITH_PAGES = "select * from users order by id limit :limit offset :offset;";
+    private static final String SQL_ADD_CART = "insert into cart () values()";
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private JdbcTemplate jdbcTemplate;
@@ -33,6 +34,7 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
             .phone(row.getString("phone"))
             .password(row.getString("password"))
             .confirmCode(row.getString("confirm_code"))
+            .cartId(row.getLong("cart_id"))
             .build();
 
     public UsersRepositoryJdbcTemplateImpl(DataSource dataSource) {
@@ -54,14 +56,6 @@ public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
         }
     }
 
-    @Override
-    public Optional<User> findUserByPassword(String password) {
-        try {
-            return Optional.of(namedParameterJdbcTemplate.queryForObject(SQL_FIND_ONE_BY_PASSWORD, Collections.singletonMap("password", password), userRowMapper));
-        } catch (EmptyResultDataAccessException e) {
-            return Optional.empty();
-        }
-    }
 
     @Override
     public List<User> findAll() {
