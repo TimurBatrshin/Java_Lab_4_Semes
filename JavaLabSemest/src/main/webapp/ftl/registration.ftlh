@@ -39,7 +39,7 @@
             height: 100px;
             background: #000;
             width: 100%;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             color: #fff;
             align-items: center;
             justify-items: center;
@@ -172,29 +172,6 @@
             color: #ac3512;
         }
 
-        .show_more {
-            width: 80%;
-            font-family: "Montserrat", sans-serif;
-            font-size: 16px;
-            text-align: center;
-            border: 1px solid #F0542C;
-            color: #F0542C;
-            padding: 22px 44px;
-            transition: all 0.5s;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 100px;
-        }
-
-        .show_more:hover {
-            background: #F0542C;
-            color: #fff;
-        }
-
-        #cheap_burgers {
-            grid-area: cheap_burgers;
-        }
-
         #cheap_burgers ul {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -218,17 +195,6 @@
             z-index: -1;
             width: 100%;
             transition: all .3s ease-in-out;
-        }
-
-        .about_cheap_burgers {
-            margin: 0 0 70px 70px;
-            width: 60%;
-            display: grid;
-        }
-
-        .price {
-            color: #F0542C !important;
-            font-size: 1.5em !important;
         }
 
         .about_cheap_burgers h3 {
@@ -261,9 +227,16 @@
             border: 1px solid #F2C64D;
             color: #F2C64D;
         }
+
         .error {
             color: red;
         }
+
+        .localization-links img {
+            width: 30px;
+            height: 20px;
+        }
+
 
     </style>
 
@@ -281,18 +254,22 @@
     <a href="/cart"><img
                 src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg"
                 width="20" alt=""></a>
+    <ul>
+        <li><a class="localization-links" href="?lang=ru"><img
+                        src="https://zarya-egorlik.ru/wp-content/uploads/2019/08/flag-rossii.jpg"></a></li>
+        <li><a class="localization-links" href="?lang=en"><img
+                        src="https://pbs.twimg.com/media/EnhR4SGXUAMpvzw.jpg"></a></li>
+    </ul>
 </header>
 <div id="present_block">
     <p>Big Burgers</p>
 </div>
-<h2><a href="?lang=ru">RU</a></h2>
-<h2><a href="?lang=en">EN</a></h2>
-<h1><@spring.message 'sign_up_page.registration.title'/></h1>
 <@spring.bind "userForm"/>
 <#if namesErrorMessage??>
-    <p style=".error">${namesErrorMessage}</p>
+    <p class="error">${namesErrorMessage}</p>
 </#if>
-<form method="post" class="form-horizontal">
+<form method="post" class="form-horizontal" id="best_burgers">
+    <h1><@spring.message 'sign_up_page.registration.title'/></h1>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -331,7 +308,10 @@
                             <@spring.showErrors "<br>" "error"/>
                         </div>
                         <div class="form-group ">
-                            <input type="submit" value="Sign Up" class="btn btn-primary btn-lg btn-block login-button">
+                            <input type="submit" value="<@spring.message 'sign_up_page.registration.title'/>"
+                                   class="btn btn-primary btn-lg btn-block login-button">
+                            <p><@spring.message 'sign_up_page.registration.text.sign_in'/> <a href="/sign_in"><@spring.message 'sign_up_page.registration.sign_in'/></a></p>
+
                         </div>
                     </div>
                 </div>
@@ -339,10 +319,5 @@
         </div>
     </div>
 </form>
-кнопка чтоб переходил на "/sign_in", но не работает
-<div class="form-group ">
-    <input href="/sign_in" type="submit" value="Sign In">
-</div>
-
 </body>
 </html>
