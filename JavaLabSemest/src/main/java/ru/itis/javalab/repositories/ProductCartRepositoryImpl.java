@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public class ProductCartRepositoryImpl implements ProductCartRepository {
     //language=SQL
-    private static final String SQL_FIND_PRODUCT_CART = "select * from cart_user where cart_id = :cartid";
+    private static final String SQL_FIND_PRODUCT_CART = "select * from cart_user where cart_id = :cart_id";
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private final JdbcTemplate jdbcTemplate;
