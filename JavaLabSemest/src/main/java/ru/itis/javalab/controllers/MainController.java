@@ -18,9 +18,6 @@ public class MainController {
     public String getProfilePage(Model model) {
         List<Product> productsRating = productService.getProductRating();
         model.addAttribute("productsRating", productsRating);
-        for (int i = 0; i < productsRating.size(); i++) {
-            System.out.println(productsRating.get(i));
-        }
         return "main";
     }
 }
