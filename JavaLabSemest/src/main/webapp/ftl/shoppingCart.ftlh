@@ -274,20 +274,20 @@
     <p>Big Burgers</p>
 </div>
 <ul>
-    <#if productsUser??>
-        <#list productsUser as product>
+    <#if productCarts??>
+        <#list productCarts as product>
             <li><img src="${product.getPhoto()}" alt="">
                 <div class="about_best_burger">
                     <h1>${product.getName()}</h1>
                     <p><#if product.getDescription()??>${product.getDescription()}<#else>Temur pidaras</#if></p>
                     <div class="price_and_basket">
                         <h3 class="price">$${product.getPrice()}</h3>
-                        <button href="/add" id="">add to basket</button>
+<#--                        <button href="/add" id="">add to basket</button>-->
                     </div>
                 </div>
             </li>
         </#list>
-    <#else>Не работает</#if>
+    <#else>Hello</#if>
 </ul>
 </body>
 </html>
