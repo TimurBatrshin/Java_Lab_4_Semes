@@ -10,12 +10,16 @@ public interface ProductRepositories extends CrudRepository<Product, Long> {
     List<Product> getAllProduct();
     List<Product> getProductRating();
 
-    Optional<Product> getAllProduct(Long id);
-
     List<Product> findAllProductsFromCartUser();
 
-    Optional<Product> getProductById(Long id);
+    Optional<Product> getProductById(Integer id);
 
     List<Product> FindProductByUser(Long product_id, Long user_id);
+
+    void addToCart(Long cartId, Integer productId);
+
+    Optional<Product> findProductCart(Integer cart_id);
+
+    void setCartUser(Long cartId, String name, String description, int price, String photo);
 
 }
