@@ -287,7 +287,6 @@
 </div>
 <div id="best_burgers">
     <h2>Burger Menu</h2>
-    <h1>BEST EVER BURGERS</h1>
     <ul>
         <#if products??>
             <#list products as product>
@@ -297,7 +296,7 @@
                         <p><#if product.getDescription()??>${product.getDescription()}<#else>Temur pidaras</#if></p>
                         <div class="price_and_basket">
                             <h3 class="price">$${product.getPrice()}</h3>
-                            <button href="/add/${product.getProduct_id()}" id="">add to basket</button>
+                            <a type="submit" href="/add/${product.getProduct_id()}">add to cart</a>
                         </div>
                     </div>
                 </li>
