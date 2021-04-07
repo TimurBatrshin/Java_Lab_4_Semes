@@ -25,7 +25,6 @@ public class ProductController {
     public String getProfilePage(HttpServletRequest request, Model model) {
         List<Product> products = productService.getAllProducts();
         model.addAttribute("products", products);
-        System.out.println(products.get(0).getDescription());
         return "menu";
     }
 }
