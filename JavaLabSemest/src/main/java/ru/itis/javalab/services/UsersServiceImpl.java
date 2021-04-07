@@ -58,11 +58,6 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public Optional<User> findUserByPassword(String password) {
-        return usersRepository.findUserByPassword(password);
-    }
-
-    @Override
     public UserDto getUser(Long userId) {
         return UserDto.from(usersRepository.findById(userId).orElse(null));
     }
@@ -72,13 +67,4 @@ public class UsersServiceImpl implements UsersService {
         return usersRepository.findUserByEmail(email);
     }
 
-    @Override
-    public void saveUser(Map pool) {
-        User user = User.builder()
-                .first_name((String) pool.get("first_name"))
-                .last_name((String) pool.get("last_name"))
-                .build();
-        usersRepository.save(user);
-
-    }
 }
