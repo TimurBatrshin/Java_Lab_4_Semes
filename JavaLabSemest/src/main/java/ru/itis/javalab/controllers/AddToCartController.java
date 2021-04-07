@@ -27,14 +27,14 @@ public class AddToCartController {
     private UsersService usersService;
 
     @RequestMapping(value = "/add/{product-id}", method = RequestMethod.GET)
-    public String getProfilePage(Model model, @PathVariable("product-id") Long id, HttpServletRequest request) {
+    public String getProfilePage(Model model, @PathVariable("product-id") Integer id, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
         Optional<User> user = usersService.findUserByEmail(email);
-        Optional<Product> products = productService.getProductById(id);
-        List<Product> productsUser = productService.getProductByUser(products.get().getProduct_id(), user.get().getId());
-        model.addAttribute("productsUser", productsUser);
-        return "shoppingCart";
+        productService.addToCart(user.get().getCartId(), id);
+        Optional<Product> product = productService.getProductById(id);
+        productService.getCartUser(user.get().getCartId(), product.get().getName(), product.get().getDescription(), product.get().getPrice(),product.get().getPhoto());
+        return "redirect:/main";
     }
 }
 
