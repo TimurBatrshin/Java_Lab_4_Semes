@@ -19,7 +19,7 @@ public class EmailUtilImpl implements EmailUtil {
     @Override
     public void sendMail(String to, String subject, String from, String text) {
         executorService.submit(() -> javaMailSender.send(mimeMessage -> {
-            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
             messageHelper.setFrom(from);
             messageHelper.setTo(to);
             messageHelper.setSubject(subject);
