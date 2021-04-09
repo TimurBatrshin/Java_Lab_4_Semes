@@ -34,7 +34,14 @@ public class ProductCartController {
         String email = (String) session.getAttribute("email");
         Optional<User> user = usersService.findUserByEmail(email);
         List<CartUser> productCarts = productCartService.getProductCart(user.get().getCartId());
-        model.addAttribute("productCarts",productCarts);
+        model.addAttribute("productCarts", productCarts);
+//        List<CartUser> sumProduct = productCartService.getSum(user.get().getCartId());
+        int sum = 0;
+        for (int i = 0; i < productCarts.size(); i++) {
+            sum += productCarts.get(i).getPrice();
+        }
+        System.out.println(sum);
+        model.addAttribute("sumProduct", sum);
         return "shoppingCart";
     }
 }
