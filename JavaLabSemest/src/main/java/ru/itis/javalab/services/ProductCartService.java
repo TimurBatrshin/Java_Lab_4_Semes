@@ -7,4 +7,7 @@ import java.util.Optional;
 
 public interface ProductCartService {
     List<CartUser> getProductCart(Long cart_id);
+    List<CartUser> getSum(Long cart_id);
+
+    void sendMail(String confirmCode, String email);
 }
