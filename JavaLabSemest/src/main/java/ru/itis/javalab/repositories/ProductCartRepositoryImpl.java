@@ -17,6 +17,8 @@ import java.util.List;
 public class ProductCartRepositoryImpl implements ProductCartRepository {
     //language=SQL
     private static final String SQL_FIND_PRODUCT_CART = "select * from cart_user where cart_id = :cart_id";
+    //language=SQL
+    private static final String SQL_FIND_SUM_CART = " select sum(price) from cart_user where cart_id = :cart_id";
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private final JdbcTemplate jdbcTemplate;
@@ -28,7 +30,7 @@ public class ProductCartRepositoryImpl implements ProductCartRepository {
 
     private RowMapper<CartUser> cartUserRowMapper = (resultSet, i) ->
             CartUser.builder()
-                    .cart_id(resultSet.getInt("cart_id"))
+                    .cart_id(resultSet.getLong("cart_id"))
                     .name(resultSet.getString("name"))
                     .description(resultSet.getString("description"))
                     .price(resultSet.getInt("price"))
@@ -38,7 +40,7 @@ public class ProductCartRepositoryImpl implements ProductCartRepository {
     private ResultSetExtractor<CartUser> productResultSetExtractor = resultSet -> {
         if (resultSet.next()) {
             return CartUser.builder()
-                    .cart_id(resultSet.getInt("cart_id"))
+                    .cart_id(resultSet.getLong("cart_id"))
                     .name(resultSet.getString("name"))
                     .description((resultSet.getString("description")))
                     .price(resultSet.getInt("price"))
@@ -58,4 +60,20 @@ public class ProductCartRepositoryImpl implements ProductCartRepository {
         return products;
     }
 
+    @Override
+    public List<CartUser> findSumCart(Long cart_id) {
+        List<CartUser> products = new ArrayList<>();
+        try {
+            products = namedParameterJdbcTemplate.query(SQL_FIND_SUM_CART, Collections.singletonMap("cart_id", cart_id), cartUserRowMapper);
+        } catch (EmptyResultDataAccessException ignored) {
+        }
+        return products;
+    }
+
+    @Override
+    public void sendOrder() {
+
+    }
 }
+
+
