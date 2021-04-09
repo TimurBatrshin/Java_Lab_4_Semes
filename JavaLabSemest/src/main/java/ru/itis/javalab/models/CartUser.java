@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class CartUser {
-    private Integer cart_id;
+    private Long cart_id;
     private String name;
     private String description;
     private int price;
