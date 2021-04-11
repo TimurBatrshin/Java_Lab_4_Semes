@@ -1,6 +1,7 @@
 package ru.itis.javalab.config;
 
 
+import lombok.SneakyThrows;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.PropertySource;
 import org.springframework.core.io.support.ResourcePropertySource;
@@ -12,21 +13,16 @@ import org.springframework.web.servlet.DispatcherServlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
-import java.io.IOException;
 
 @Configuration
 public class ApplicationInitializer implements WebApplicationInitializer {
+    @SneakyThrows
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext springWebContext = new AnnotationConfigWebApplicationContext();
 
-        PropertySource propertySource = null;
-        try {
-            propertySource = new ResourcePropertySource("classpath:application.properties");
-        } catch (IOException e) {
-            new IllegalStateException(e);
-        }
-//        springWebContext.getEnvironment().setActiveProfiles((String) propertySource.getProperty("spring.profile"));
+        PropertySource propertySource = new ResourcePropertySource("classpath:application.properties");;
+        springWebContext.getEnvironment().setActiveProfiles((String) propertySource.getProperty("spring.profile"));
 
 
         springWebContext.register(ApplicationConfig.class);
