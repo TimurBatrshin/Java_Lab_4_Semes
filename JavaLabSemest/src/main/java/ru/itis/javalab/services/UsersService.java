@@ -13,7 +13,7 @@ public interface UsersService {
     List<User> getAllUser();
     List<UserDto> getAllUser(int page, int size);
     Optional<User> findUserByEmailAndPassword(String email, String password);
-    UserDto getUser(Long userId);
+    Optional<User> getUser(Long userId);
 
     Optional<User> findUserByEmail(String email);
 }
