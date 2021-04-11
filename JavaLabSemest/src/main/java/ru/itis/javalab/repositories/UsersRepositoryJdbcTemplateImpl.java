@@ -11,7 +11,7 @@ import ru.itis.javalab.models.User;
 import javax.sql.DataSource;
 import java.util.*;
 
-//@Profile("master")
+@Profile("master")
 @Repository
 public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
     //language=SQL
