@@ -2,6 +2,7 @@ package ru.itis.javalab.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ru.itis.javalab.dto.UserForm;
 import ru.itis.javalab.models.User;
@@ -13,6 +14,7 @@ import ru.itis.javalab.util.MailsGenerator;
 import java.util.UUID;
 
 @Service
+@Profile("master")
 public class SignUpServiceImpl implements SignUpService {
 
     @Autowired
