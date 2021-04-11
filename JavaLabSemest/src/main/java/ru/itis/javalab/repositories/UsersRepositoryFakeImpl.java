@@ -40,6 +40,8 @@ public class UsersRepositoryFakeImpl implements UsersRepository {
         return Optional.of(User.builder()
                 .first_name("fake")
                 .last_name("fake")
+                .email("fake")
+                .phone("fake")
                 .build());
     }
 
@@ -50,7 +52,12 @@ public class UsersRepositoryFakeImpl implements UsersRepository {
 
     @Override
     public Optional<User> findUserByEmail(String email) {
-        return Optional.empty();
+        return Optional.of(User.builder()
+        .first_name("fake")
+        .last_name("fake")
+        .email("fake")
+        .phone("fake")
+        .build());
     }
 
 }
