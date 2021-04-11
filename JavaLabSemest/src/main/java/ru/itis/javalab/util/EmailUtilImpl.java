@@ -1,6 +1,7 @@
 package ru.itis.javalab.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.ExecutorService;
 
 @Component
-public class EmailUtilImpl implements EmailUtil {
+ public class EmailUtilImpl implements EmailUtil {
 
     @Autowired
     private JavaMailSender javaMailSender;
