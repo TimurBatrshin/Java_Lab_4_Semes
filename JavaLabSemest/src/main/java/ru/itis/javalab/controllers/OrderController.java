@@ -22,19 +22,14 @@ public class OrderController {
 
     @Autowired
     private ProductCartService productCartService;
+
     @RequestMapping(value = "/order", method = RequestMethod.GET)
     public String getProfilePage(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
         Optional<User> user = usersService.findUserByEmail(email);
         List<CartUser> productCarts = productCartService.getProductCart(user.get().getCartId());
-        model.addAttribute("productCarts", productCarts);
-        int sum = 0;
-        for (int i = 0; i < productCarts.size(); i++) {
-            sum += productCarts.get(i).getPrice();
-        }
-        productCartService.sendMail(user.get().getConfirmCode(), user.get().getEmail());
-        model.addAttribute("sumProduct", sum);
-       return null;
+        productCartService.sendMailOrder(productCarts, user.get().getEmail());
+       return "redirect:/main";
     }
 }
