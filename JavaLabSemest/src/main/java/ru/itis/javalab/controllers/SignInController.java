@@ -33,6 +33,7 @@ public class SignInController {
         String email = request.getParameter("email").trim();
         String password = request.getParameter("password").trim();
         Optional<User> user = usersService.findUserByEmail(email);
+        System.out.println(user);
         if (user.isPresent() && bCrypterService.checkPassword(password, user.get().getPassword().trim())) {
 //            System.out.println("Вошел");
             HttpSession session = request.getSession(true);
