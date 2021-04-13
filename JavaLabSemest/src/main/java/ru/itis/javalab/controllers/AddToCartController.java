@@ -27,7 +27,7 @@ public class AddToCartController {
     private UsersService usersService;
 
     @RequestMapping(value = "/add/{product-id}", method = RequestMethod.GET)
-    public String getProfilePage(Model model, @PathVariable("product-id") Integer id, HttpServletRequest request) {
+    public String addProductToCart(Model model, @PathVariable("product-id") Integer id, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
         Optional<User> user = usersService.findUserByEmail(email);
