@@ -15,7 +15,7 @@ public class MainController {
     private ProductService productService;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public String getProfilePage(Model model) {
+    public String getMainPage(Model model) {
         List<Product> productsRating = productService.getProductRating();
         model.addAttribute("productsRating", productsRating);
         return "main";
