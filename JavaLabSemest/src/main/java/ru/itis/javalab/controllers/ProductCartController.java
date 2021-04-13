@@ -29,7 +29,7 @@ public class ProductCartController {
     private ProductService productService;
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
-    public String getProfilePage(Model model, HttpServletRequest request) {
+    public String getShoppingCartPage(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
         Optional<User> user = usersService.findUserByEmail(email);
