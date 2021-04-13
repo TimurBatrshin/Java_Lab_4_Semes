@@ -22,7 +22,7 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
-    public String getProfilePage(HttpServletRequest request, Model model) {
+    public String getMenuPage(HttpServletRequest request, Model model) {
         List<Product> products = productService.getAllProducts();
         model.addAttribute("products", products);
         return "menu";
