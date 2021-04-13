@@ -4,22 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.itis.javalab.models.CartUser;
-import ru.itis.javalab.models.ProductCart;
 import ru.itis.javalab.repositories.ProductCartRepository;
 import ru.itis.javalab.util.EmailUtil;
-import ru.itis.javalab.util.MailsGenerator;
+import ru.itis.javalab.util.MailsOrderGenerator;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductCartServiceImpl implements ProductCartService {
-
     @Autowired
-    private ProductCartRepository productCartRepository;
-
-    @Autowired
-    private MailsGenerator mailsGenerator;
+    private MailsOrderGenerator mailsGenerator;
 
     @Autowired
     private EmailUtil emailUtil;
@@ -29,6 +23,9 @@ public class ProductCartServiceImpl implements ProductCartService {
 
     @Value("${spring.mail.username}")
     private String from;
+
+    @Autowired
+    private ProductCartRepository productCartRepository;
 
     @Override
     public List<CartUser> getProductCart(Long id) {
@@ -41,9 +38,9 @@ public class ProductCartServiceImpl implements ProductCartService {
     }
 
     @Override
-    public void sendMail(String confirmCode, String email) {
-        String confirmMail = mailsGenerator.getMailForConfirm(serverUrl, confirmCode);
-        emailUtil.sendMail(email, "Регистрация", from, confirmMail);
+    public void sendMailOrder(List<CartUser> productCarts, String email) {
+        String orderMail = mailsGenerator.getMailForOrder(serverUrl, productCarts);
+        emailUtil.sendMail(email, "Заказ", from, orderMail);
     }
 
 
