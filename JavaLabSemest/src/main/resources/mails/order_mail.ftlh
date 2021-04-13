@@ -285,15 +285,15 @@
     </style>
 </head>
 <body>
-<h1>Your order:</h1>
 <img src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg" alt="">
+<h1>Your order:</h1>
 <ul>
-    <#if productCarts??>
-        <#list productCarts as product>
+    <#if cartUsers??>
+        <#list cartUsers as product>
             <li><img src="${product.getPhoto()}" alt="">
                 <div class="about_best_burger">
                     <h1>${product.getName()}</h1>
-                    <p><#if product.getDescription()??>${product.getDescription()}<#else>Temur pidaras</#if></p>
+                    <p><#if product.getDescription()??>${product.getDescription()}<#else>Pip</#if></p>
                     <div class="price_and_basket">
                         <h3 class="price">$${product.getPrice()}</h3>
                     </div>
@@ -302,11 +302,5 @@
         </#list>
     <#else>Hello</#if>
 </ul>
-
-<div class="product-sum">
-    <p class="product-sum__value"><@spring.message 'shopping_cart_page.sum'/> : <#if sumProduct??>
-            ${sumProduct}<#else>Lexa Lox</#if> $
-    </p>
-</div>
 </body>
 </html>
