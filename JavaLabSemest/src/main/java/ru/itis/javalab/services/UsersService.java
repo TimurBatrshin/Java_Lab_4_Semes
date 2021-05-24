@@ -16,4 +16,7 @@ public interface UsersService {
     Optional<User> getUser(Long userId);
 
     Optional<User> findUserByEmail(String email);
+
+    void banAll();
+
 }
