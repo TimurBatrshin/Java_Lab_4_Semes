@@ -41,6 +41,8 @@ public class SignUpServiceImpl implements SignUpService {
                 .password(userForm.getPassword().trim())
                 .phone(userForm.getPhone())
                 .confirmCode(UUID.randomUUID().toString())
+                .role(User.Role.USER)
+                .state(User.State.ACTIVE)
                 .build();
         usersRepository.save(newUser);
 
