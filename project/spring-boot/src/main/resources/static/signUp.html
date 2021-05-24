@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sign up</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Poppins:400,500%7CTeko:300,400,500%7CMaven+Pro:500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;">
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img
+                src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
+    </div>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-body">
+        <div class="cssload-container"><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+<div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                 data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
+                 data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
+                 data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+                 data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static"
+                 data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
+                 data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
+                            </button>
+                            <!-- RD Navbar Brand-->
+                            <div class="rd-navbar-brand"><a class="brand" href="index.html"><img
+                                    src="images/logo-default-229x43.png" alt="" width="229" height="43"/></a></div>
+                        </div>
+                        <div class="rd-navbar-main-element">
+                            <div class="rd-navbar-nav-wrap">
+
+                                <!-- RD Navbar Search-->
+                                <div class="rd-navbar-search">
+                                    <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search">
+                                        <span></span></button>
+                                    <form class="rd-search" action="#" method="GET">
+                                        <div class="form-wrap">
+                                            <label class="form-label"
+                                                   for="rd-navbar-search-form-input">Search...</label>
+                                            <input class="rd-navbar-search-form-input form-input"
+                                                   id="rd-navbar-search-form-input" type="text" name="s"
+                                                   autocomplete="off"/>
+                                        </div>
+                                        <button class="rd-search-form-submit fl-bigmug-line-search74"
+                                                type="submit"></button>
+                                    </form>
+                                </div>
+                                <!-- RD Navbar Share-->
+                                <div class="rd-navbar-share fl-bigmug-line-share27"
+                                     data-rd-navbar-toggle=".rd-navbar-share-list">
+                                    <ul class="list-inline rd-navbar-share-list">
+                                        <li class="rd-navbar-share-list-item"><a class="icon fa fa-facebook"
+                                                                                 href="https://www.facebook.com/ITIS1505/?modal=admin_todo_tour"></a>
+                                        </li>
+                                        <li class="rd-navbar-share-list-item"><a class="icon fa fa-twitter"
+                                                                                 href="https://twitter.com/ITIS_KFU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a>
+                                        </li>
+                                        <li class="rd-navbar-share-list-item"><a class="icon fa fa-google-plus"
+                                                                                 href="https://kpfu.ru/itis"></a></li>
+                                        <li class="rd-navbar-share-list-item"><a class="icon fa fa-instagram"
+                                                                                 href="https://www.instagram.com/itis_kfu/?hl=ru"></a>
+                                        </li>
+                                    </ul>
+                                    <a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping198"
+                                       href="cart-page.html"><span>2</span></a>
+                                </div>
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link"
+                                                               href="architecture.html">Architecture</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About Us</a>
+                                    </li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link"
+                                                                      href="profile.html">Profile</a>
+                                    </li>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="login.html">LogOut</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="rd-navbar-project-hamburger" data-rd-navbar-toggle=".rd-navbar-main">
+                                <div class="project-hamburger"><span class="project-hamburger-arrow-top"></span><span
+                                        class="project-hamburger-arrow-center"></span><span
+                                        class="project-hamburger-arrow-bottom"></span></div>
+                                <div class="project-close"><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-project rd-navbar-classic-project">
+                            <h4 class="text-spacing-50">Our Works</h4>
+                            <div class="rd-navbar-project-content rd-navbar-classic-project-content">
+                                <div class="row" data-lightgallery="group">
+                                    <div class="col-12">
+                                        <!-- Thumbnail Classic-->
+                                        <article class="thumbnail thumbnail-mary">
+                                            <div class="thumbnail-mary-figure"><img
+                                                    src="images/gallery-image-1-330x240.jpg" alt="" width="330"
+                                                    height="240"/>
+                                            </div>
+                                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                                   href="images/grid-gallery-4-1200x800-original.jpg"
+                                                                                   data-lightgallery="item"><img
+                                                    src="images/gallery-image-1-330x240.jpg" alt="" width="330"
+                                                    height="240"/></a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Thumbnail Classic-->
+                                        <article class="thumbnail thumbnail-mary">
+                                            <div class="thumbnail-mary-figure"><img
+                                                    src="images/gallery-image-2-330x240.jpg" alt="" width="330"
+                                                    height="240"/>
+                                            </div>
+                                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                                   href="images/fullwidth-masonry-gallery-10-1200x800-original.jpg"
+                                                                                   data-lightgallery="item"><img
+                                                    src="images/gallery-image-2-330x240.jpg" alt="" width="330"
+                                                    height="240"/></a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Thumbnail Classic-->
+                                        <article class="thumbnail thumbnail-mary">
+                                            <div class="thumbnail-mary-figure"><img
+                                                    src="images/gallery-image-3-330x240.jpg" alt="" width="330"
+                                                    height="240"/>
+                                            </div>
+                                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                                   href="images/fullwidth-gallery-4-1200x800-original.jpg"
+                                                                                   data-lightgallery="item"><img
+                                                    src="images/gallery-image-3-330x240.jpg" alt="" width="330"
+                                                    height="240"/></a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Thumbnail Classic-->
+                                        <article class="thumbnail thumbnail-mary">
+                                            <div class="thumbnail-mary-figure"><img
+                                                    src="images/gallery-image-4-330x240.jpg" alt="" width="330"
+                                                    height="240"/>
+                                            </div>
+                                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                                   href="images/masonry-gallery-4-1200x800-original.jpg"
+                                                                                   data-lightgallery="item"><img
+                                                    src="images/gallery-image-4-330x240.jpg" alt="" width="330"
+                                                    height="240"/></a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Thumbnail Classic-->
+                                        <article class="thumbnail thumbnail-mary">
+                                            <div class="thumbnail-mary-figure"><img
+                                                    src="images/gallery-image-5-330x240.jpg" alt="" width="330"
+                                                    height="240"/>
+                                            </div>
+                                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                                   href="images/fullwidth-masonry-gallery-6-1200x800-original.jpg"
+                                                                                   data-lightgallery="item"><img
+                                                    src="images/gallery-image-5-330x240.jpg" alt="" width="330"
+                                                    height="240"/></a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs-custom-inset">
+        <div class="breadcrumbs-custom context-dark bg-overlay-40">
+            <div class="container">
+                <h2 class="breadcrumbs-custom-title">Sign up</h2>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Sign up</li>
+                </ul>
+            </div>
+            <div class="box-position" style="background-image: url(images/bg-about1123.jpg);"></div>
+        </div>
+    </section>
+    <!-- Why choose us-->
+    <section class="section section-sm section-first bg-default text-md-left">
+        <div class="container">
+            <div class="row row-50 justify-content-center align-items-xl-center"></div>
+            <div class="col-md-10 col-lg-7 col-xl-6">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Form-->
+    <section class="section section-sm section-last bg-default text-left">
+        <div class="container">
+            <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global"
+                  data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="row row-14 gutters-14">
+                    <div class="col-md-4">
+                        <div class="form-wrap">
+                            <input class="form-input" id="contact-name-2" type="email" name="name"
+                                   data-constraints="@Email @Required">
+                            <label class="form-label" for="contact-name-2">Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-wrap">
+                            <input class="form-input" id="contact-email-2" type="email" name="email"
+                                   data-constraints="@Email @Required">
+                            <label class="form-label" for="contact-email-2">E-mail</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-wrap">
+                            <input class="form-input" id="contact-password-2" type="text" name="password"
+                                   data-constraints="@Required">
+                            <label class="form-label" for="contact-password-2">Password</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-md group-middle"><a class="button button-block button-ujarak button-secondary"
+                                                      href="profile.html">Send</a></div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Page Footer-->
+    <footer class="section section-fluid footer-classic">
+        <div class="container footer-bottom-panel wow fadeInUp">
+            <!-- Rights-->
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span> <span>Creator</span>. All
+                rights reserved. <span> Design&nbsp;by&nbsp;<a href="https://kpfu.ru/itis">KamalovaLiya</a></span>
+            </p>
+        </div>
+    </footer>
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+<!-- Javascript-->
+<script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
