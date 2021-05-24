@@ -50,4 +50,15 @@ public class UsersServiceImpl implements UsersService {
         return usersRepository.findUserByEmail(email);
     }
 
+    @Override
+    public void banAll() {
+        List<User> users = usersRepository.findAll();
+        for (User user : users) {
+            if (!user.isAdmin()) {
+                user.setState(User.State.BANNED);
+                usersRepository.save(user);
+            }
+        }
+    }
+
 }
