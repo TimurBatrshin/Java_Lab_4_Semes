@@ -128,4 +128,10 @@ public class ApplicationConfig {
         return mailSender;
     }
 
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+
 }

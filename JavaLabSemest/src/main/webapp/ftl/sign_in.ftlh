@@ -129,6 +129,7 @@
             font: bold 15px Arial, Helvetica;
             color: #8f5a0a;
         }
+
         * {
             padding: 0;
             margin: 0;
@@ -152,7 +153,7 @@
             height: 100px;
             background: #000;
             width: 100%;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             color: #fff;
             align-items: center;
             justify-items: center;
@@ -374,6 +375,11 @@
             border: 1px solid #F2C64D;
             color: #F2C64D;
         }
+
+        .localization-links img {
+            width: 30px;
+            height: 20px;
+        }
     </style>
 
 </head>
@@ -386,8 +392,16 @@
     <a href="/main"><img
                 src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg"
                 width="180" height="95" alt=""></a>
-    <a href="/sign_up">Registration</a>
-    <a href="/cart"><img src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg" width="20" alt=""></a>
+    <a href="/sign_up">Registration</a> <!-- or Profile -->
+    <a href="/cart"><img
+                src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg"
+                width="20" alt=""></a>
+    <ul>
+        <li><a class="localization-links" href="?lang=ru"><img
+                        src="https://zarya-egorlik.ru/wp-content/uploads/2019/08/flag-rossii.jpg"></a></li>
+        <li><a class="localization-links" href="?lang=en"><img
+                        src="https://pbs.twimg.com/media/EnhR4SGXUAMpvzw.jpg"></a></li>
+    </ul>
 </header>
 <div id="present_block">
     <p>Big Burgers</p>
@@ -395,24 +409,26 @@
 <!------ Include the above in your HEAD tag ---------->
 
 
-<form action="/sign_in" method="post" class="form-horizontal">
+<form action="/sign_in" method="post" class="form-group">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
-<#--                            <label><@spring.message 'sign_up_page.registration.email'/></label>-->
-<#--                            <input placeholder="Email" name="email" type="email">-->
-                            <fieldset id="inputs">
+                            <fieldset>
                                 <label><@spring.message 'sign_up_page.registration.email'/></label>
-                                <input id="username" type="text" placeholder="Логин" name="email">
+                                <input class="text-input" id="username" type="text" placeholder="Логин" name="email">
                                 <label><@spring.message 'sign_up_page.registration.password'/></label>
-                                <input id="password" type="password" placeholder="Пароль" name="password">
+                                <input class="text-input" type="password" placeholder="Пароль" name="password">
                             </fieldset>
                         </div>
-                        <fieldset id="actions">
-                            <input type="submit" id="submit" value="<@spring.message 'sign_up_page.registration.sign_in'/>">
+                        <fieldset>
+                            <input class="btn btn-light" type="submit" id="submit" href="/sign_in"
+                                   value="<@spring.message 'sign_up_page.registration.sign_in'/>">
+                            <label>
+                                <input type="checkbox" name="remember-me">Запомни меня
+                            </label>
                             <a href="/sign_up"><@spring.message 'sign_up_page.registration.title'/></a>
                         </fieldset>
                     </div>

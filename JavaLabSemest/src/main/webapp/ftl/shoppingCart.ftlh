@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<#import "spring.ftl" as spring/>
 <head>
     <meta charset="UTF-8">
     <title>Menu page</title>
@@ -34,7 +35,7 @@
             height: 100px;
             background: #000;
             width: 100%;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             color: #fff;
             align-items: center;
             justify-items: center;
@@ -256,7 +257,45 @@
             border: 1px solid #F2C64D;
             color: #F2C64D;
         }
+
+        .product-sum {
+            background-color: white;
+            margin: 20px 0 0 0;
+            padding: 30px;
+        }
+
+        .product-sum__value {
+            position: relative;
+            padding: 20px;
+            width: 200px;
+            right: 0;
+            background-color: white;
+
+        }
+
+        .product-sum__button {
+            display: inline-block;
+            background-color: #89e289;
+            border-radius: 30px;
+            width: 200px;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product-sum__button a {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .localization-links img {
+            width: 30px;
+            height: 20px;
+        }
+
+
     </style>
+
 </head>
 <body>
 <header>
@@ -267,8 +306,16 @@
     <a href="/main"><img
                 src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg"
                 width="180" height="95" alt=""></a>
-    <a href="/sign-up">Registration</a> <!-- or Profile -->
-    <a href="/cart"><img src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg" width="20" alt=""></a>
+    <a href="/sign_up">Registration</a> <!-- or Profile -->
+    <a href="/cart"><img
+                src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg"
+                width="20" alt=""></a>
+    <ul>
+        <li><a class="localization-links" href="?lang=ru"><img
+                        src="https://zarya-egorlik.ru/wp-content/uploads/2019/08/flag-rossii.jpg"></a></li>
+        <li><a class="localization-links" href="?lang=en"><img
+                        src="https://pbs.twimg.com/media/EnhR4SGXUAMpvzw.jpg"></a></li>
+    </ul>
 </header>
 <div id="present_block">
     <p>Big Burgers</p>
@@ -279,15 +326,30 @@
             <li><img src="${product.getPhoto()}" alt="">
                 <div class="about_best_burger">
                     <h1>${product.getName()}</h1>
-                    <p><#if product.getDescription()??>${product.getDescription()}<#else>Temur pidaras</#if></p>
+                    <p><#if product.getDescription()??>${product.getDescription()}<#else>Pip</#if></p>
                     <div class="price_and_basket">
                         <h3 class="price">$${product.getPrice()}</h3>
-<#--                        <button href="/add" id="">add to basket</button>-->
+                        <#--                        <button href="/add" id="">add to basket</button>-->
                     </div>
                 </div>
             </li>
         </#list>
     <#else>Hello</#if>
 </ul>
+
+<div class="product-sum">
+    <p class="product-sum__value"><@spring.message 'shopping_cart_page.sum'/> : <#if sumProduct??>
+            ${sumProduct}<#else>Nnnn</#if> $
+    </p>
+
+    <div class="product-sum__button">
+        <a href="/order"><@spring.message 'shopping_cart_page.button'/></a>
+    </div>
+
+</div>
+<p><@spring.message 'shopping_cart_page.message'/></p>
+<footer>
+
+</footer>
 </body>
 </html>

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+<#import "spring.ftl" as spring/>
 <head>
     <meta charset="UTF-8">
     <title>Menu page</title>
-    <link rel="stylesheet" href="css/main.css">
+    <#--    <link rel="stylesheet" href="css/main.css">-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
@@ -11,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
         * {
             padding: 0;
@@ -34,7 +39,7 @@
             height: 100px;
             background: #000;
             width: 100%;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             color: #fff;
             align-items: center;
             justify-items: center;
@@ -167,29 +172,6 @@
             color: #ac3512;
         }
 
-        .show_more {
-            width: 80%;
-            font-family: "Montserrat", sans-serif;
-            font-size: 16px;
-            text-align: center;
-            border: 1px solid #F0542C;
-            color: #F0542C;
-            padding: 22px 44px;
-            transition: all 0.5s;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 100px;
-        }
-
-        .show_more:hover {
-            background: #F0542C;
-            color: #fff;
-        }
-
-        #cheap_burgers {
-            grid-area: cheap_burgers;
-        }
-
         #cheap_burgers ul {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -213,17 +195,6 @@
             z-index: -1;
             width: 100%;
             transition: all .3s ease-in-out;
-        }
-
-        .about_cheap_burgers {
-            margin: 0 0 70px 70px;
-            width: 60%;
-            display: grid;
-        }
-
-        .price {
-            color: #F0542C !important;
-            font-size: 1.5em !important;
         }
 
         .about_cheap_burgers h3 {
@@ -256,7 +227,19 @@
             border: 1px solid #F2C64D;
             color: #F2C64D;
         }
+
+        .error {
+            color: red;
+        }
+
+        .localization-links img {
+            width: 30px;
+            height: 20px;
+        }
+
+
     </style>
+
 </head>
 <body>
 <header>
@@ -268,7 +251,15 @@
                 src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg"
                 width="180" height="95" alt=""></a>
     <a href="/sign_up">Registration</a> <!-- or Profile -->
-    <a href="/cart"><img src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg" width="20" alt=""></a>
+    <a href="/cart"><img
+                src="https://img2.freepng.ru/20180329/zvw/kisspng-computer-icons-shopping-cart-retail-clip-art-shopping-cart-5abdaab0711a27.4162977915223794404633.jpg"
+                width="20" alt=""></a>
+    <ul>
+        <li><a class="localization-links" href="?lang=ru"><img
+                        src="https://zarya-egorlik.ru/wp-content/uploads/2019/08/flag-rossii.jpg"></a></li>
+        <li><a class="localization-links" href="?lang=en"><img
+                        src="https://pbs.twimg.com/media/EnhR4SGXUAMpvzw.jpg"></a></li>
+    </ul>
 </header>
 <div id="present_block">
     <p>Big Burgers</p>
@@ -302,7 +293,7 @@
                 <h3>The Burger President</h3>
                 <p>Great way to make your business appear trust
                     and relevant.</p>
-                <a href="#">add to cart</a>
+                <a href="/add">add to cart</a>
             </div>
         </li>
         <li>

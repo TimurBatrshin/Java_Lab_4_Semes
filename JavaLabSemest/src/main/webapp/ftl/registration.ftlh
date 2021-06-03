@@ -264,10 +264,7 @@
 <div id="present_block">
     <p>Big Burgers</p>
 </div>
-<@spring.bind "userForm"/>
-<#if namesErrorMessage??>
-    <p class="error">${namesErrorMessage}</p>
-</#if>
+<@spring.bind "userForm"/><div>
 <form method="post" class="form-horizontal" id="best_burgers">
     <h1><@spring.message 'sign_up_page.registration.title'/></h1>
     <div class="container">
@@ -278,13 +275,19 @@
                         <div class="form-group">
                             <@spring.message 'sign_up_page.registration.first_name'/>
                             <@spring.formInput "userForm.first_name"/>
-                            <@spring.showErrors "<br>" "error"/>
+                            <@spring.showErrors "<br>"/>
+                            <#if namesErrorMessage??>
+                                <p class="error">${namesErrorMessage}</p>
+                            </#if>
                         </div>
 
                         <div class="form-group">
                             <@spring.message 'sign_up_page.registration.last_name'/>
                             <@spring.formInput "userForm.last_name"/>
                             <@spring.showErrors "<br>" "error"/>
+                            <#if namesErrorMessage??>
+                                <p class="error">${namesErrorMessage}</p>
+                            </#if>
                         </div>
 
                         <div class="form-group">
@@ -319,5 +322,6 @@
         </div>
     </div>
 </form>
+</div>
 </body>
 </html>
