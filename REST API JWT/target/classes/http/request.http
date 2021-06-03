@@ -1,0 +1,36 @@
+POST http://localhost/login
+Content-Type: application/json
+
+{
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007"
+}
+
+###
+POST http://localhost/sign_up
+Content-Type: application/json
+
+{
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007",
+  "firstName": "Timur",
+  "lastName" : "Batrshin"
+}
+
+###
+
+POST http://localhost/addDoctor
+Content-Type: application/json
+
+{
+  "firstName": "Timur",
+  "lastName" : "Batrshin"
+}
+
+###
+
+GET http://localhost/doctors
+"token" : e36d7e3e-6539-4180-b24d-1c12d55560be
+
+
+
