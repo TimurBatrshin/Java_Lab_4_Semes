@@ -4,3 +4,5 @@ JPA,
 mail,
 validaton,
 localization,
+#JavaLabSemest
+первая домашняя работа на MVC
