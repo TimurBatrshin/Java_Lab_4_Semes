@@ -1,0 +1,40 @@
+POST http://localhost/login
+Content-Type: application/json
+
+{
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007"
+}
+
+###
+POST http://localhost/sign_up
+Content-Type: application/json
+
+{
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007",
+  "firstName": "Timur",
+  "lastName" : "Batrshin"
+}
+
+###
+POST http://localhost/teachers
+Content-Type: application/json
+
+{
+  "firstName": "Timur",
+  "lastName": "Batrshin"
+}
+
+###
+
+GET http://localhost/teachers
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wMlQyMjo1ODo1MC4zNTMiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnUifQ.CPJK50YjvG9rMZY2F1edWpS6yx5FpehRQGMcWH9UYQE
+###
+
+GET http://localhost/logout
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wMlQyMjo1ODo1MC4zNTMiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnUifQ.CPJK50YjvG9rMZY2F1edWpS6yx5FpehRQGMcWH9UYQE
+###
+
+POST http://localhost/users/3/block
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wMlQyMjo1ODo1MC4zNTMiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnUifQ.CPJK50YjvG9rMZY2F1edWpS6yx5FpehRQGMcWH9UYQE
