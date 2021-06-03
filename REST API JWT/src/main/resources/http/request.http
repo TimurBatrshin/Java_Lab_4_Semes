@@ -30,7 +30,5 @@ Content-Type: application/json
 ###
 
 GET http://localhost/doctors
-"token" : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wM1QxNDoxNDoxMy4zMTAiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnVyIn0.tTDgaxT4QI2DUGcGFv6T4XpIp5fg9atJPyDYTfyf-1s
-
-
+"token" : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wM1QxNjozNDo1OC4wOTUiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnVyIn0.UDxc_cXbhBafcJGNsRB1g_62o--I-acwb49bba3HNfU
 

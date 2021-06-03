@@ -24,7 +24,7 @@ public class DoctorController {
 
 
     @GetMapping("/doctors")
-    public ResponseEntity<List<DoctorDto>> getAllDoctors(@RequestHeader("X-TOKEN") String token){
+    public ResponseEntity<List<DoctorDto>> getAllDoctors(@RequestHeader(name = "X-TOKEN") String token){
         return ResponseEntity.ok(doctorService.getAllDoctors());
     }
 
