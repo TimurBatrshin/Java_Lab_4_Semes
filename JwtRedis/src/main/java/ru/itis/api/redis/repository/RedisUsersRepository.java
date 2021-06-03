@@ -5,4 +5,6 @@ import ru.itis.api.redis.models.RedisUser;
 
 
 public interface RedisUsersRepository extends KeyValueRepository<RedisUser, String> {
+
+
 }

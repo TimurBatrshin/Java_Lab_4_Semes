@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.itis.api.dto.EmailPasswordDto;
 import ru.itis.api.dto.SignUpDto;
 import ru.itis.api.dto.TokenDto;
+import ru.itis.api.models.User;
 import ru.itis.api.services.LoginService;
 import ru.itis.api.services.SignUpService;
 
@@ -26,7 +27,7 @@ public class LoginController {
     }
 
     @PostMapping("/sign_up")
-    public ResponseEntity<SignUpDto> signUp(@RequestBody SignUpDto signUpDto) {
+    public ResponseEntity<User> signUp(@RequestBody SignUpDto signUpDto) {
          return ResponseEntity.ok(signUpService.save(signUpDto));
     }
 }

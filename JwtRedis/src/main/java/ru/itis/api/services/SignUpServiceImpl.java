@@ -18,7 +18,7 @@ public class SignUpServiceImpl implements SignUpService {
     private UsersRepository usersRepository;
 
     @Override
-    public SignUpDto save(SignUpDto signUpDto) {
+    public User save(SignUpDto signUpDto) {
         User user = User.builder()
                 .firstName(signUpDto.getFirstName())
                 .lastName(signUpDto.getLastName())
@@ -27,7 +27,6 @@ public class SignUpServiceImpl implements SignUpService {
                 .role(User.Role.ADMIN)
                 .state(User.State.ACTIVE)
                 .build();
-        usersRepository.save(user);
-        return signUpDto;
+        return usersRepository.save(user);
     }
 }

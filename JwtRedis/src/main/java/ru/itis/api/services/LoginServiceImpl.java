@@ -47,7 +47,6 @@ public class LoginServiceImpl implements LoginService {
                     .withClaim("role", user.getRole().toString())
                     .withClaim("state", user.getState().toString())
                     .withClaim("email", user.getEmail())
-                    .withClaim("createdAt", LocalDateTime.now().toString())
                     .sign(algorithm);
             redisUsersService.addTokenToUser(user, token);
             return TokenDto.builder()
