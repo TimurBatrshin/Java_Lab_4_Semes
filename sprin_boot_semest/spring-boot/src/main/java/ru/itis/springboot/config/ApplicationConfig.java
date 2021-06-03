@@ -12,5 +12,4 @@ public class ApplicationConfig {
     public ExecutorService executorService() {
         return Executors.newCachedThreadPool();
     }
-
 }
