@@ -29,9 +29,8 @@
                 </div>
             </div>
         </div>
-        <#if authentication??>
-            <p>Хотите обсудить с колегами ?Можете перейти в <a href="/index">ЧАТ</a></p>
-        </#if>
+        <h1 class="news-title">No Success</h1>
+
     </div>
     <footer class="footer">
         <div class="first-footer">

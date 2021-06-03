@@ -3,6 +3,10 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="../css/main_style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -18,8 +22,8 @@
                         <li class="header__menu-elements header__menu-elements_active"><a href="/main">HOME</a></li>
                         <li class="header__menu-elements"><a href="/contest">3X3</a></li>
                         <li class="header__menu-elements"><a href="/ranking">RANKINGS</a></li>
-                        <li class="header__menu-elements"><a href="news.html">MyTEAM</a></li>
-                        <li class="header__menu-elements"><a href="">Profile</a></li>
+                        <li class="header__menu-elements"><a href="/myTeam">MyTEAM</a></li>
+                        <li class="header__menu-elements"><a href="/profile">Profile</a></li>
                         <#if authentication??>
                             <li class="header__menu-elements"><a href="/logout">Exit</a></li>
                         <#else>
@@ -29,6 +33,7 @@
                 </div>
             </div>
         </div>
+        <input type="text" placeholder="Введите Имя Игрока" id="search_input">
         <table class="ranking__rankings rankings-individual" data-table-type="individual" data-table-name="all"
                data-table-active="true">
             <thead>
@@ -40,22 +45,7 @@
                 <th class="rankings-individual__rank rankings-individual__rank--heading"> Points</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td class="rankings-individual__rank">1</td>
-                <td class="rankings-individual__image">
-                    <img width="40" height="40" alt="Nauris Miezis" class=" lazyloaded"
-                         data-src="https://fiba3x3cdn.azureedge.net/images/Member/0/c/0/f/0c0fdec4-9a8f-4353-98ec-4a97ecd72c5a/profile.80x80.png?ck=637342457000000000"
-                         src="https://fiba3x3cdn.azureedge.net/images/Member/0/c/0/f/0c0fdec4-9a8f-4353-98ec-4a97ecd72c5a/profile.80x80.png?ck=637342457000000000">
-                </td>
-                <td class="rankings-individual__player">Nauris Miezis</td>
-                <td class="rankings-individual__nationality"><img width="40" height="30" alt="Latvia"
-                                                                  class=" lazyloaded"
-                                                                  data-src="/flags/4x3/lv.svg" src="/flags/4x3/lv.svg">
-                    <span>Latvia</span></td>
-                <td class="rankings-individual__points">871,074</td>
-                <td></td>
-            </tr>
+            <tbody id="user_list">
             <#if userList??>
                 <#list userList as users>
                     <tr>
@@ -72,6 +62,7 @@
             </#if>
             </tbody>
         </table>
+
     </div>
     <footer class="footer">
         <div class="first-footer">
@@ -95,6 +86,30 @@
         </div>
     </footer>
 </div>
-
+<script>
+    $(document).ready(function () {
+        $("#search_input").on('input', function () {
+            $.ajax({
+                url: "/add/get-by-title",
+                method: "GET",
+                data: {
+                    template: $("#search_input").val()
+                },
+                success: function (data) {
+                    $("#user_list").empty();
+                    data.forEach(function (item) {
+                        $("#user_list").append(
+                            "<li>" +
+                            "<h3>" + item.bindPr + "</h3>" +
+                            "<p>" + item.description + "</p>" +
+                            "<hr>" +
+                            "</li>"
+                        );
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

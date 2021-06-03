@@ -18,8 +18,8 @@
                         <li class="header__menu-elements header__menu-elements_active"><a href="/main">HOME</a></li>
                         <li class="header__menu-elements"><a href="/contest">3X3</a></li>
                         <li class="header__menu-elements"><a href="/ranking">RANKINGS</a></li>
-                        <li class="header__menu-elements"><a href="news.html">MyTEAM</a></li>
-                        <li class="header__menu-elements"><a href="">Profile</a></li>
+                        <li class="header__menu-elements"><a href="/myTeam">MyTEAM</a></li>
+                        <li class="header__menu-elements"><a href="/profile">Profile</a></li>
                         <#if authentication??>
                             <li class="header__menu-elements"><a href="/logout">Exit</a></li>
                         <#else>
@@ -42,22 +42,25 @@
             </tr>
             </thead>
             <tbody>
-            <#if userList??>
-                <#list userList as user>
-                    <tr>
-                        <td class="rankings-individual__rank"></td>
-                        <td class="rankings-individual__image">
-                            <img width="40" height="40" class=" lazyloaded" src="<#if user.getPhotoUrl()??>
+            <#if authentication>
+                <#if userList??>
+                    <#list userList as user>
+                        <tr>
+                            <td class="rankings-individual__rank"></td>
+                            <td class="rankings-individual__image">
+                                <img width="40" height="40" class=" lazyloaded" src="<#if user.getPhotoUrl()??>
 ${user.getPhotoUrl()}
 <#else>https://toymenu.ru/upload/iblock/bf1/bf1365aef93e607d285ae46459570459.jpg
                         </#if>">
 
-                        </td>
-                        <td class="rankings-individual__player">${user.first_name}</td>
-                        <td class="rankings-individual__nationality">${user.nationality}</td>
-                        <td class="rankings-individual__points">${user.point}</td>
-                    </tr>
-                </#list>
+                            </td>
+                            <td class="rankings-individual__player">${user.first_name}</td>
+                            <td class="rankings-individual__nationality">${user.nationality}</td>
+                            <td class="rankings-individual__points">${user.point}</td>
+                        </tr>
+                    </#list>
+                </#if>
+                <#else><p>У вас нет команды, надо зарегестрироваться</p>
             </#if>
 
             </tbody>

@@ -6,4 +6,5 @@ import lombok.Data;
 public class TeamDto {
     private String name;
     private String photoUrl;
+
 }

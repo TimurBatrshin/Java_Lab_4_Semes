@@ -25,5 +25,6 @@
     </#if>
 
 </table>
+<a href="/banAll"></a>
 </body>
 </html>

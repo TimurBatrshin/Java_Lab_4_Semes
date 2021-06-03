@@ -1,6 +1,7 @@
 package ru.itis.springboot.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +28,7 @@ public class MyTeamController {
     private UsersService usersService;
 
     @GetMapping("/myTeam")
-    public String getMyTeamPage(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails, HttpServletRequest request){
+    public String getMyTeamPage(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails, HttpServletRequest request, Authentication authentication){
         HttpSession session = request.getSession();
         Long team_id = (Long) session.getAttribute("team_id");
         List<Long> longList = teamService.findAllByTeam(team_id);
@@ -38,7 +39,7 @@ public class MyTeamController {
                 userList.add(user.get());
         }
         model.addAttribute("userList", userList);
-
+        model.addAttribute("authentication", authentication);
 
         User user = userDetails.getUser();
 //        Long user_id = user.getId();

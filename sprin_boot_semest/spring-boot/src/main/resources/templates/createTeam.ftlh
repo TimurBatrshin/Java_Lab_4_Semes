@@ -18,8 +18,8 @@
                         <li class="header__menu-elements header__menu-elements_active"><a href="/main">HOME</a></li>
                         <li class="header__menu-elements"><a href="/contest">3X3</a></li>
                         <li class="header__menu-elements"><a href="/ranking">RANKINGS</a></li>
-                        <li class="header__menu-elements"><a href="news.html">MyTEAM</a></li>
-                        <li class="header__menu-elements"><a href="">Profile</a></li>
+                        <li class="header__menu-elements"><a href="/myTeam">MyTEAM</a></li>
+                        <li class="header__menu-elements"><a href="/profile">Profile</a></li>
                         <#if authentication??>
                             <li class="header__menu-elements"><a href="/logout">Exit</a></li>
                         <#else>

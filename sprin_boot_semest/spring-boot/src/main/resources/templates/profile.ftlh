@@ -18,8 +18,9 @@
                         <li class="header__menu-elements"><a href="/main">HOME</a></li>
                         <li class="header__menu-elements"><a href="/contest">3X3</a></li>
                         <li class="header__menu-elements"><a href="/ranking">RANKINGS</a></li>
-                        <li class="header__menu-elements"><a href="news.html">MyTEAM</a></li>
-                        <li class="header__menu-elements  header__menu-elements_active"><a href="">Profile</a></li>
+                        <li class="header__menu-elements"><a href="/myTeam">MyTEAM</a></li>
+                        <li class="header__menu-elements  header__menu-elements_active"><a href="/profile">Profile</a>
+                        </li>
                         <#if authentication??>
                             <li class="header__menu-elements "><a href="/logout">Exit</a></li>
                         <#else>
@@ -44,16 +45,18 @@
             </tr>
             </thead>
             <tbody>
+            <#if authentication??>
                 <#if user??>
-            <tr>
-                <td class="rankings-individual__rank">${user.get().first_name}</td>
-                <td class="rankings-individual__image">${user.get().last_name}</td>
-                <td class="rankings-individual__player">${user.get().email}</td>
-                <td class="rankings-individual__nationality" ></td>
-                <td class="rankings-individual__points"></td>
-                <td class="rankings-individual__points">${user.get().point}</td>
+                    <tr>
+                        <td class="rankings-individual__rank">${user.get().first_name}</td>
+                        <td class="rankings-individual__image">${user.get().last_name}</td>
+                        <td class="rankings-individual__player">${user.get().email}</td>
+                        <td class="rankings-individual__nationality"></td>
+                        <td class="rankings-individual__points"></td>
+                        <td class="rankings-individual__points">${user.get().point}</td>
 
-            </tr>
+                    </tr>
+                </#if>
             </#if>
             </tbody>
         </table>

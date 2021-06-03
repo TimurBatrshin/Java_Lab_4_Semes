@@ -13,7 +13,6 @@ import java.util.UUID;
 
 @Service
 public class SignInServiceImpl implements SignInService {
-    private User user;
 
     @Autowired
     private UserRepository userRepository;

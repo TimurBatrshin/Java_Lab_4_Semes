@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>Ссылка на регистрацию:</h1>
-<img src="https://image.freepik.com/free-vector/vintage-burger-hand-drawn-logo-illustration_43582-60.jpg" alt="">
-<h2><a href="${server_url}/confirm/${confirm_code}/sign_in">Пройдите по ссылке</a></h2>
+<img src="https://fiba3x3.com/img/3x3-logo-cut.svg" alt="">
+<h2><a href="${server_url}/confirm/${confirm_code}">Пройдите по ссылке</a></h2>
 </body>
 </html>

@@ -2,6 +2,7 @@ package ru.itis.springboot.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.itis.springboot.dto.UserDto;
 import ru.itis.springboot.models.User;
 import ru.itis.springboot.repositories.UserRepository;
 
@@ -13,6 +14,11 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     private UserRepository userRepository;
+
+//    @Override
+//    public List<User> findUserByTemplate(String template) {
+//        return userRepository.findAllByLast_nameLike("%"+template+"%");
+//    }
 
     @Override
     public List<User> getAllUsers() {
@@ -43,6 +49,12 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Optional<User> findUserById(Long id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public void Success(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        user.get().setConfirm(User.Confirm.CONFIRM);
     }
 
 

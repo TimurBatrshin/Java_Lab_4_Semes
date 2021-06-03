@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import ru.itis.springboot.dto.SignUpForm;
 import ru.itis.springboot.models.User;
 import ru.itis.springboot.repositories.UserRepository;
+import ru.itis.springboot.util.EmailUtil;
+import ru.itis.springboot.util.MailsGenerator;
 //import ru.itis.springboot.util.EmailUtil;
 //import ru.itis.springboot.util.MailsGenerator;
 
@@ -22,11 +24,11 @@ public class SignUpServiceImpl implements SignUpService {
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
-//    private MailsGenerator mailsGenerator;
-//
-//    @Autowired
-//    private EmailUtil emailUtil;
+    @Autowired
+    private MailsGenerator mailsGenerator;
+
+    @Autowired
+    private EmailUtil emailUtil;
 
     @Value("${server.url}")
     private String serverUrl;
@@ -46,13 +48,15 @@ public class SignUpServiceImpl implements SignUpService {
                 .role(User.Role.USER)
                 .state(User.State.ACTIVE)
                 .point(0L)
-                .photoUrl("/static/img/logo-white.jpg")
+                .photoUrl("https://sun9-51.userapi.com/impf/c845122/v845122920/143e70/HfKoFsr7frw.jpg?size=810x1080&quality=96&sign=cf716fe4c5d65f7d1ef4612a190d396a&type=album")
                 .city(signUpForm.getCity())
+                .confirm(User.Confirm.NOT_CONFIRM)
+                .nationality("Russia")
                 .build();
         userRepository.save(newUser);
 
-//        String confirmMail = mailsGenerator.getMailForConfirm(serverUrl, newUser.getConfirmCode());
-//
-//        emailUtil.sendMail(newUser.getEmail(), "Регистрация", from, confirmMail);
+        String confirmMail = mailsGenerator.getMailForConfirm(serverUrl, newUser.getConfirmCode());
+
+        emailUtil.sendMail(newUser.getEmail(), "Регистрация", from, confirmMail);
     }
 }

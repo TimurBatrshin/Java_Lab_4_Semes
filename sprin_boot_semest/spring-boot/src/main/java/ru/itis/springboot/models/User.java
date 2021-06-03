@@ -44,6 +44,7 @@ public class User implements Serializable {
 
     private String photoUrl;
 
+
     public String getPhotoUrl() {
         if (photoUrl != null)
         return photoUrl;
@@ -51,10 +52,17 @@ public class User implements Serializable {
     }
 
     @Enumerated(value = EnumType.STRING)
+    private Confirm confirm;
+
+    @Enumerated(value = EnumType.STRING)
     private State state;
 
     @Enumerated(value = EnumType.STRING)
     private Role role;
+
+    public enum Confirm{
+        CONFIRM, NOT_CONFIRM
+    }
 
     public enum State {
         ACTIVE, BANNED
