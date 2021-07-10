@@ -1,0 +1,20 @@
+POST http://localhost:8080/sign_up
+Content-Type: application/json
+
+{
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007",
+  "userName": "Timur"
+}
+
+###
+
+POST http://localhost:8080/sign_up
+Content-Type: application/json
+
+{
+  "userName": "Timur",
+  "email": "batrshintimur@yandex.ru",
+  "password": "Timur007"
+
+}
