@@ -1,0 +1,281 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+/*--------------------*/
+
+body {
+    
+}
+
+.wrapper {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slider {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    animation: animate 32s ease-in-out infinite;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.outer {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(252, 252, 238, 0.8);
+}
+
+@keyframes animate {
+    0%, 100% {
+        background-image: url(../img/login-slider1.jpg);
+    }
+    25% {
+        background-image: url(../img/login-slider2.jpg);
+    }
+    50% {
+        background-image: url(../img/login-slider3.jpg);
+    }
+    75% {
+        background-image: url(../img/login-slider4.jpg);
+    }
+}
+
+.registration {
+}
+
+.registration__box {
+    width: 400px;
+    padding: 40px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #8a91ff;
+    text-align: center;
+    border-radius: 25px;
+    background: #fcfcee;
+}
+
+.registration__box img {
+    width: 100px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.registration__title {
+    font-size: 24px;
+    line-height: 1.44;
+    letter-spacing: 0.36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #242424;
+    font-weight: 500;
+}
+
+.registration__box input[type = "text"],
+.registration__box input[type = "email"],
+.registration__box input[type = "password"],
+.registration__box input[type = "number"],
+.registration__box input[type = "tel"],
+.registration__box input[type = "date"] {
+    background: none;
+    display: block;
+    margin: 12px auto;
+    text-align: center;
+    border: 1.55px solid #6169e8;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    color: #242424;
+}
+
+.form_radio_group {
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px 0 0 0;
+}
+
+.form-radio_group__item {
+    display: inline-block;
+    float: left;
+}
+
+.form_radio_group input[type=radio] {
+    display: none;
+}
+
+.form_radio_group label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 13px;
+    line-height: 34px;
+    border: 1px solid #6169e8;
+    border-right: none;
+    user-select: none;
+    transition: 0.5s;
+}
+
+.form_radio_group .form-radio_group__item-first label {
+    border-radius: 25px 0 0 25px;
+}
+
+.form_radio_group .form-radio_group__item-last label {
+    border-radius: 0 25px 25px 0;
+    border-right: 1px solid #6169e8;
+}
+
+.form_radio_group input[type=radio]:checked + label {
+    background: #db8b00;
+    color: #fff;
+}
+ 
+.form_radio_group label:hover {
+    color: #707070;
+}
+
+.registration__box input[type = "text"]:focus,
+.registration__box input[type = "email"]:focus,
+.registration__box input[type = "password"]:focus,
+.registration__box input[type = "number"]:focus,
+.registration__box input[type = "tel"]:focus,
+.registration__box input[type = "date"]:focus {
+    width: 280px;
+    background-color: none;
+    color: #242424;
+}
+
+.error {
+    color: #ff6161;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.errorMessage {
+    color: #ff6161;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.passwordMatchErrorMessage {
+    color: #ff6161;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.registration__box input[type = "submit"] {
+    border: 0;
+    background-color: #6169e8;
+    display: block;
+    text-align: center;
+    box-shadow: 0px 0px 2px #6169e8;
+    padding: 10px 30px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.4s;
+    color: #fff;
+    margin: 20px auto 0 auto;
+}
+
+.registration__box input[type = "submit"]:hover {
+    background-color: #db8b00;
+    box-shadow: 0px 0px 2px #db8b00;
+}
+
+.sign-up {
+    margin-top: 20px;
+    color: #242424;
+}
+
+.sign-up__link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #242424;
+    transition: 0.3s;
+}
+
+.sign-up__link:hover {
+    color: #707070;
+}
+
+.sign-up__link:active {
+    color: #363237;
+}

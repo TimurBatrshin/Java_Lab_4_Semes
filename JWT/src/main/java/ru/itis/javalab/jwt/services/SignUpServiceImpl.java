@@ -29,6 +29,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .userName(userForm.getUserName())
                 .email(userForm.getEmail())
                 .password(passwordEncoder.encode(userForm.getPassword()))
+                .data(userForm.getData())
                 .role(User.Role.STUDENT)
                 .state(User.State.ACTIVE)
                 .status(User.Status.CONFIRMED)

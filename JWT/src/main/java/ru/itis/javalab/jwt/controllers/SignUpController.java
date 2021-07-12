@@ -20,7 +20,6 @@ public class SignUpController {
     @PermitAll
     @PostMapping("/sign_up")
     public ResponseEntity<?> signUp(@RequestBody UserForm userForm) {
-        User user = signUpService.signUp(userForm);
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(signUpService.signUp(userForm));
     }
 }

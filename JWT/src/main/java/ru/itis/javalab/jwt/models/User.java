@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -25,7 +26,9 @@ public class User implements Serializable {
 
     private String userName;
 
-    private Integer age;
+    private String data;
+
+    private String phone;
 
     private String email;
 
