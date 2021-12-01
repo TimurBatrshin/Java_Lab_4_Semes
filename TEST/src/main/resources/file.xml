@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<data>
+    <users>
+        <user userName="batrshintimur@yandex.ru" password="Timur007"/>
+    </users>
+
+    <addresss>
+        <address firstName="TimurTimur"
+                 lastName="BatrshinBatrshin"
+                 city="Kazan"
+                 zipCode="453480"
+                 adreess1="Pushkina"
+                 houseNumber="32"
+                 apartmentNumber="401"
+                 phone="937)333-51-98"/>
+
+
+        <address1 firstName="Timur"
+                  lastName="Batrshin"
+                  city="Kazan"
+                  zipCode="453480"
+                  adreess1="Pushkina"
+                  houseNumber="32"
+                  apartmentNumber="401"
+                  phone="937)333-51-98"/>
+
+    </addresss>
+
+</data>
+
+
+
