@@ -28,6 +28,6 @@ public class LoginController {
 
     @PostMapping("/sign_up")
     public ResponseEntity<User> signUp(@RequestBody SignUpDto signUpDto) {
-         return ResponseEntity.ok(signUpService.save(signUpDto));
+        return ResponseEntity.ok(signUpService.save(signUpDto));
     }
 }
