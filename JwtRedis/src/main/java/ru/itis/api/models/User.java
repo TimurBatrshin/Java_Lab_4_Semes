@@ -21,6 +21,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String userName;
+
     private String email;
 
     private String hashPassword;
@@ -33,8 +35,6 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String patronymic;
-
     private String redisId;
 
     public enum State {
@@ -42,7 +42,7 @@ public class User {
     }
 
     public enum Role {
-        USER, ADMIN
+        USER, ADMIN, Student, Teacher, Curator
     }
 
     public boolean isActive() {
