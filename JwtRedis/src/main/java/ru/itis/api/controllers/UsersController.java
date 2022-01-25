@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.itis.api.services.UsersService;
 
-
 @RestController
 public class UsersController {
     @Autowired
@@ -19,3 +18,4 @@ public class UsersController {
         return ResponseEntity.ok().build();
     }
 }
+
