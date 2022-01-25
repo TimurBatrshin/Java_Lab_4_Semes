@@ -6,7 +6,6 @@ import ru.itis.api.models.User;
 import ru.itis.api.redis.services.RedisUsersService;
 import ru.itis.api.repository.UsersRepository;
 
-
 @Service
 public class UsersServiceImpl implements UsersService {
 
