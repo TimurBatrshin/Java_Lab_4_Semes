@@ -4,7 +4,6 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,10 +13,6 @@ import ru.itis.api.models.User;
 import ru.itis.api.redis.services.RedisUsersService;
 import ru.itis.api.repository.UsersRepository;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.UUID;
 import java.util.function.Supplier;
 
 
