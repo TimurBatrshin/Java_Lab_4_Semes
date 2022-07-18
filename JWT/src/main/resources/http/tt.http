@@ -1,4 +1,4 @@
-POST http://localhost:8080/sign_up
+POST http://localhost:80/sign_up
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/login
+POST http://localhost:80/login
 Content-Type: application/json
 
 {
@@ -17,3 +17,6 @@ Content-Type: application/json
   "email": "batrshintimur@yandex.ru",
   "deviceFingerprint": "idea"
 }
+
+###
+GET http://localhost:80/logout

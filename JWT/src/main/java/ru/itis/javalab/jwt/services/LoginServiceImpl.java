@@ -17,11 +17,11 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private final UsersRepository usersRepository;
 
-    public LoginServiceImpl(PasswordEncoder passwordEncoder,
-                            UsersRepository usersRepository) {
+    public LoginServiceImpl(PasswordEncoder passwordEncoder, UsersRepository usersRepository) {
         this.passwordEncoder = passwordEncoder;
         this.usersRepository = usersRepository;
     }
+
 
     @Override
     public User login(LoginDto loginDto) {

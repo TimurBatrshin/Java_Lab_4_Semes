@@ -22,6 +22,6 @@ public interface TokenService {
 
     Map<String, Claim> getClaims(String token);
 
-    public TokenPairDto generateTokenPair(User user, String fingerprint);
+    TokenPairDto generateTokenPair(User user, String fingerprint);
 
 }

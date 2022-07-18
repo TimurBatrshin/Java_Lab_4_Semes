@@ -2,7 +2,7 @@ POST http://localhost/login
 Content-Type: application/json
 
 {
-  "email": "batrshintimur@yandex.ru",
+  "email": "batrshintimur@yandex.rur",
   "password": "Timur007"
 }
 
@@ -11,7 +11,7 @@ POST http://localhost/sign_up
 Content-Type: application/json
 
 {
-  "email": "batrshintimur@yandex.ru",
+  "email": "batrshintimur@yandex.rur",
   "password": "Timur007",
   "firstName": "Timur",
   "lastName" : "Batrshin"
@@ -30,7 +30,6 @@ Content-Type: application/json
 ###
 
 GET http://localhost/doctors
-"token" : e36d7e3e-6539-4180-b24d-1c12d55560be
-
+"token" : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0wM1QxNjoyOTo1NC4zNTciLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkFDVElWRSIsImVtYWlsIjoiYmF0cnNoaW50aW11ckB5YW5kZXgucnVyIn0.XBQNOq6Zqtiz6te7Kd5rNTiyqhWkrhMQrcboy_PP68U
 
 

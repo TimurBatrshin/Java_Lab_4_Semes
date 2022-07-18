@@ -43,8 +43,6 @@
             <form action="/sign_up" method="post">
                 <div class="main">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-                    <#--            <input name="first_name" type="text" placeholder="Name">-->
-
                     <div class="field">
                         <label>Name</label>
                         <@spring.formInput "signUpForm.first_name" "placeholder='Name'"/>

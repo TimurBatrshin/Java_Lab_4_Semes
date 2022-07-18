@@ -3,7 +3,6 @@ package ru.itis.test.test;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.junit.Test;
-import ru.itis.test.AuthBase;
 import ru.itis.test.Generator;
 import ru.itis.test.TestBase;
 import ru.itis.test.data.AccountData;
