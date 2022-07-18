@@ -7,8 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.itis.springboot.security.details.UserDetailsImpl;
 
-import java.util.UUID;
-
 @Controller
 public class IndexController {
     @GetMapping("/index")

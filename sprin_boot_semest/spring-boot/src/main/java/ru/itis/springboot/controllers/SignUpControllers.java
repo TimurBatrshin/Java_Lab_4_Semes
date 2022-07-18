@@ -14,7 +14,6 @@ import ru.itis.springboot.dto.SignUpForm;
 import ru.itis.springboot.models.User;
 import ru.itis.springboot.services.SignUpService;
 
-import javax.annotation.security.PermitAll;
 import javax.validation.Valid;
 import java.util.Objects;
 

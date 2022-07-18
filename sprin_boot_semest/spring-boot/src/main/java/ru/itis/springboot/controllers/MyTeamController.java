@@ -6,7 +6,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.itis.springboot.models.Team;
 import ru.itis.springboot.models.User;
 import ru.itis.springboot.security.details.UserDetailsImpl;
 import ru.itis.springboot.services.TeamService;
